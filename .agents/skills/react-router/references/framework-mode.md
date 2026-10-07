@@ -1,6 +1,6 @@
 # Framework Mode
 
-Framework Mode is React Router's full-stack mode. It uses the React Router Vite plugin, route config in `app/routes.ts`, route modules, generated route types, and rendering strategies such as SSR, SPA mode, and pre-rendering.
+Framework Mode is React Router's full-stack mode. It uses the React Router Vite plugin, route config in `../../../../src/routes.ts`, route modules, generated route types, and rendering strategies such as SSR, SPA mode, and pre-rendering.
 
 Use this reference after the main skill identifies a Framework Mode app.
 
@@ -45,7 +45,7 @@ route modules importing from ./+types/...
 Typical route module:
 
 ```tsx
-import type { Route } from "./+types/product";
+import type { Route } from './+types/product';
 
 export async function loader({ params }: Route.LoaderArgs) {
   return { product: await getProduct(params.productId) };
@@ -58,7 +58,7 @@ export default function Product({ loaderData }: Route.ComponentProps) {
 
 ## Route Configuration
 
-Framework apps use `app/routes.ts`. Many apps use file-system routing via `flatRoutes()`, but manual route config is also supported.
+Framework apps use `../../../../src/routes.ts`. Many apps use file-system routing via `flatRoutes()`, but manual route config is also supported.
 
 Before editing routes, read:
 
@@ -100,7 +100,7 @@ Use generated `Route.*` types from `./+types/<route>` for route module args and 
 
 ## Layout and Root Route Rules
 
-- `app/root.tsx` is the root route and should contain global document/app shell concerns.
+- `../../../../src/root.tsx` is the root route and should contain global document/app shell concerns.
 - Put global providers, app-wide nav, app-wide footer, scripts/meta/links, and document structure in `root.tsx` when appropriate.
 - Use nested routes/layout routes for section-specific layouts.
 - Do not flatten routes that should share UI or data boundaries.
